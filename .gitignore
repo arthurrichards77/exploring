@@ -1,2 +1,5 @@
 slprj/*
 *.mex*
+*.asv
+*.mdl.r201*
+*.autosave
