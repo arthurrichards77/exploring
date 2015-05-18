@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.564"
+    ComputedModelVersion    "1.565"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -45,7 +45,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1936.0, 1056.0]
+      Location		      [-8.0, 0.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -54,7 +54,7 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[8]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
@@ -62,28 +62,16 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		2
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1265.0, 856.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [-7.25, 0.0]
-	}
-	Object {
-	  $ObjectID		  7
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "2333"
-	  Extents		  [1886.0, 879.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [167.0, 97.125]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		6
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"2333"
+	Extents			[1886.0, 882.0]
+	ZoomFactor		[0.8]
+	Offset			[111.75, -45.625]
       }
     }
   }
@@ -96,9 +84,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "aeagr"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon May 18 17:20:23 2015"
-  RTWModifiedTimeStamp	  353870350
-  ModelVersionFormat	  "1.%<AutoIncrement:564>"
+  LastModifiedDate	  "Mon May 18 17:26:28 2015"
+  RTWModifiedTimeStamp	  353870741
+  ModelVersionFormat	  "1.%<AutoIncrement:565>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -138,7 +126,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    8
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "explore"
     Array {
@@ -200,13 +188,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      9
+      $ObjectID		      8
       Version		      "1.14.2"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.14.2"
 	  StartTime		  "0.0"
 	  StopTime		  "600"
@@ -241,7 +229,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.14.2"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -274,7 +262,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.14.2"
 	  Array {
 	    Type		    "Cell"
@@ -334,7 +322,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.14.2"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -424,7 +412,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.14.2"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -465,7 +453,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.14.2"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -480,7 +468,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.14.2"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -496,7 +484,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  17
+	  $ObjectID		  16
 	  Version		  "1.14.2"
 	  Array {
 	    Type		    "Cell"
@@ -577,7 +565,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      18
+	      $ObjectID		      17
 	      Version		      "1.14.2"
 	      Array {
 		Type			"Cell"
@@ -646,7 +634,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      19
+	      $ObjectID		      18
 	      Version		      "1.14.2"
 	      Array {
 		Type			"Cell"
@@ -732,7 +720,7 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  20
+	  $ObjectID		  19
 	  Version		  "1.14.2"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -754,11 +742,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    9
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    21
+    $ObjectID		    20
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -841,6 +829,14 @@ Model {
       Outputs		      "4"
       DisplayOption	      "none"
       BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      Lockdown		      off
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      DotProduct
@@ -1112,8 +1108,8 @@ Model {
   }
   System {
     Name		    "explore"
-    Location		    [16, 52, 1331, 1085]
-    Open		    on
+    Location		    [-8, 0, 1928, 1056]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1126,7 +1122,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2677"
+    SIDHighWatermark	    "2678"
     Block {
       BlockType		      Constant
       Name		      "Constant1"
@@ -1250,7 +1246,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"MPC xy"
-	Location		[-8, -8, 1928, 1048]
+	Location		[-8, 0, 1928, 1056]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1262,7 +1258,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  Inport
 	  Name			  "x_u"
@@ -1807,6 +1803,15 @@ Model {
 	  ShowName		  off
 	  Outputs		  "3"
 	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display"
+	  SID			  "2678"
+	  Ports			  [1]
+	  Position		  [1505, 465, 1580, 655]
+	  ZOrder		  2
+	  Decimation		  "1"
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -2694,7 +2699,7 @@ Model {
 	  ZOrder		  -3
 	  Floating		  off
 	  Location		  [6, 52, 576, 519]
-	  Open			  off
+	  Open			  on
 	  NumInputPorts		  "1"
 	  ZoomMode		  "yonly"
 	  List {
@@ -2813,8 +2818,18 @@ Model {
 	  Points		  [10, 0]
 	  Branch {
 	    ZOrder		    11
-	    DstBlock		    "xt"
-	    DstPort		    1
+	    Points		    [28, 0]
+	    Branch {
+	      ZOrder		      109
+	      Points		      [0, 150]
+	      DstBlock		      "Display"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      108
+	      DstBlock		      "xt"
+	      DstPort		      1
+	    }
 	  }
 	  Branch {
 	    ZOrder		    12

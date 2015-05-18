@@ -167,7 +167,7 @@ Fps = [1 0 0 0; % first line is  xmin-x<=0
        0 -1 0 0; % next x-xmax<=0
        zeros(4,4);
        0 0 1 0; % ymin-y<=0
-       0 0 -1 0; % y-ymax<=0
+       0 0 0 -1; % y-ymax<=0
        zeros(4,4)]*softWeight;
 
 % terminal constraints Ff*x(N)<=Ff;
