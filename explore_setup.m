@@ -182,6 +182,11 @@ ff = kron([1 1]', ff);
 % parameter depends again on plim
 Fpf = diag([1 -1 1 -1]);
 
+% OVERWRITE terminal hard constraints playing up
+Fxf = 1e-6*eye(8); % effectively no constraint at all
+ff = ones(8,1);
+Fpf = zeros(8,4);
+
 % terminal equality constraints Ef*x(N)==ef
 Ef = eye(8)-A;
 Ef = Ef([1:2 5:6],:);
@@ -360,7 +365,7 @@ obst = [-2.4950    1.5000    1.3750    2.0000
 
 
 %% start position
-homePos = [-2 -1];
+homePos = [-2.5 -1];
 %homePos = [-1 -2.5];
 
 %% learning setup

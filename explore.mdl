@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.565"
+    ComputedModelVersion    "1.569"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -68,10 +68,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"2333"
+	LoadSaveID		"2550"
 	Extents			[1886.0, 882.0]
-	ZoomFactor		[0.8]
-	Offset			[111.75, -45.625]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -84,9 +84,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "aeagr"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon May 18 17:26:28 2015"
-  RTWModifiedTimeStamp	  353870741
-  ModelVersionFormat	  "1.%<AutoIncrement:565>"
+  LastModifiedDate	  "Tue May 19 10:58:04 2015"
+  RTWModifiedTimeStamp	  353933739
+  ModelVersionFormat	  "1.%<AutoIncrement:569>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1032,6 +1032,9 @@ Model {
       ZeroCross		      on
     }
     Block {
+      BlockType		      Stop
+    }
+    Block {
       BlockType		      SubSystem
       ShowPortLabels	      "FromPortIcon"
       Permissions	      "ReadWrite"
@@ -1122,7 +1125,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2678"
+    SIDHighWatermark	    "2680"
     Block {
       BlockType		      Constant
       Name		      "Constant1"
@@ -1247,7 +1250,7 @@ Model {
       System {
 	Name			"MPC xy"
 	Location		[-8, 0, 1928, 1056]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2473,7 +2476,7 @@ Model {
 	  ZOrder		  -3
 	  Floating		  off
 	  Location		  [188, 390, 512, 629]
-	  Open			  off
+	  Open			  on
 	  NumInputPorts		  "1"
 	  ZoomMode		  "yonly"
 	  List {
@@ -2590,7 +2593,7 @@ Model {
 	  ZOrder		  -3
 	  Floating		  off
 	  Location		  [188, 390, 512, 629]
-	  Open			  off
+	  Open			  on
 	  NumInputPorts		  "1"
 	  List {
 	    ListType		    AxesTitles
@@ -2655,7 +2658,7 @@ Model {
 	  ZOrder		  -3
 	  Floating		  off
 	  Location		  [218, 634, 542, 873]
-	  Open			  off
+	  Open			  on
 	  NumInputPorts		  "1"
 	  ZoomMode		  "xonly"
 	  List {
@@ -2673,8 +2676,8 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  off
-	  YMin			  "1"
-	  YMax			  "1"
+	  YMin			  "0.95"
+	  YMax			  "1.05"
 	  SaveName		  "ScopeData5"
 	  DataFormat		  "StructureWithTime"
 	  SampleTime		  "0"
@@ -3989,7 +3992,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Planner"
-	Location		[47, 444, 891, 980]
+	Location		[-8, 0, 1928, 1056]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6336,7 +6339,7 @@ Model {
       Position		      [1245, 229, 1275, 261]
       ZOrder		      -30
       Floating		      off
-      Location		      [1, 52, 1281, 963]
+      Location		      [6, 52, 1286, 963]
       Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "yonly"
@@ -6402,7 +6405,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"TargetNodeSelection"
-	Location		[16, 52, 1076, 876]
+	Location		[-8, 0, 1928, 1056]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6800,8 +6803,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Visualizer"
-	Location		[202, 324, 971, 950]
-	Open			off
+	Location		[-8, 0, 1928, 1056]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6865,6 +6868,22 @@ Model {
 	  ZOrder		  -6
 	  Port			  "6"
 	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Constant"
+	  SID			  "2680"
+	  Ports			  [1, 1]
+	  Position		  [440, 85, 470, 115]
+	  ZOrder		  2
+	  LibraryVersion	  "1.287"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+	  SourceType		  "Compare To Constant"
+	  ContentPreviewEnabled	  off
+	  relop			  "<"
+	  const			  "1"
+	  OutDataTypeStr	  "boolean"
+	  ZeroCross		  on
 	}
 	Block {
 	  BlockType		  MATLABFcn
@@ -6947,17 +6966,17 @@ Model {
 	  OutPortSampleTime	  "dt"
 	}
 	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator"
-	  SID			  "2542"
-	  Position		  [440, 90, 460, 110]
-	  ZOrder		  -5
+	  BlockType		  Stop
+	  Name			  "Stop Simulation"
+	  SID			  "2679"
+	  Position		  [540, 82, 575, 118]
+	  ZOrder		  1
 	}
 	Line {
-	  ZOrder		  1
+	  ZOrder		  15
 	  SrcBlock		  "Interpreted MATLAB\nFunction"
 	  SrcPort		  1
-	  DstBlock		  "Terminator"
+	  DstBlock		  "Compare\nTo Constant"
 	  DstPort		  1
 	}
 	Line {
@@ -7055,6 +7074,13 @@ Model {
 	  Points		  [80, 0; 0, -175]
 	  DstBlock		  "Mux2"
 	  DstPort		  5
+	}
+	Line {
+	  ZOrder		  16
+	  SrcBlock		  "Compare\nTo Constant"
+	  SrcPort		  1
+	  DstBlock		  "Stop Simulation"
+	  DstPort		  1
 	}
       }
     }
@@ -7470,7 +7496,10 @@ Stateflow {
     firstTransition	    14
     firstJunction	    13
     viewObj		    2
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -7737,7 +7766,7 @@ Stateflow {
     midPoint		    [23.5747 24.9468]
     chart		    2
     linkNode		    [2 0 0]
-    dataLimits		    [23.575 23.575 14.625 34.575]
+    dataLimits		    [21.175 25.975 14.625 42.575]
     subviewer		    2
     drawStyle		    SMART
     slide {
@@ -8481,7 +8510,10 @@ Stateflow {
     firstTransition	    52
     firstJunction	    51
     viewObj		    44
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    9
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -8658,7 +8690,7 @@ Stateflow {
     midPoint		    [23.5747 24.9468]
     chart		    44
     linkNode		    [44 0 0]
-    dataLimits		    [23.575 23.575 14.625 34.575]
+    dataLimits		    [21.175 25.975 14.625 42.575]
     subviewer		    44
     drawStyle		    SMART
     slide {

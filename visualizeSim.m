@@ -26,7 +26,8 @@ nObst = floor(length(obstIn)/4);
 % reformat
 obst = reshape(obstIn,4,nObst)';
 
-figure(1)
+% do the plot
+f=figure(1);
 plot(x(1),x(4),'bo',px,py,'b-',ys(1),ys(2),'k+', ... 
      goal(1),goal(2),'gx',obst(:,[1 2 2 1 1])',obst(:,[3 3 4 4 3])','r', ...
      verts([1 2 2 1 1]),verts([3 3 4 4 3]),'g-', ...
@@ -34,5 +35,12 @@ plot(x(1),x(4),'bo',px,py,'b-',ys(1),ys(2),'k+', ...
 axis([-6 6 -6 6])
 axis square
 
-% token output
-y=0;
+% see if figure doesn't yet have a tickbox
+if(isempty(get(f,'UserData'))),
+    % add it and store handle in this useful little property holder
+    ht=uicontrol('Style','CheckBox','String','Continue','Value',1);
+    set(f,'UserData',ht);
+end
+
+% set output to stop sim if checkbox unticked
+y=get(get(f,'UserData'),'Value');
