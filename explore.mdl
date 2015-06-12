@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.588"
+    ComputedModelVersion    "1.591"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -67,11 +67,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"2681"
 	Extents			[1886.0, 882.0]
 	ZoomFactor		[1.0]
-	Offset			[-7.25, 0.0]
+	Offset			[-9.0, 0.0]
       }
     }
   }
@@ -84,9 +84,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "aeagr"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jun 12 16:02:54 2015"
-  RTWModifiedTimeStamp	  356025770
-  ModelVersionFormat	  "1.%<AutoIncrement:588>"
+  LastModifiedDate	  "Fri Jun 12 16:21:35 2015"
+  RTWModifiedTimeStamp	  356026894
+  ModelVersionFormat	  "1.%<AutoIncrement:591>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1123,11 +1123,16 @@ Model {
       CodeGenStateStorageClass "Auto"
       HasFrameUpgradeWarning  on
     }
+    Block {
+      BlockType		      Width
+      OutDataTypeMode	      "Choose intrinsic data type"
+      DataType		      "double"
+    }
   }
   System {
     Name		    "explore"
     Location		    [-8, 0, 1928, 1056]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1140,7 +1145,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2790"
+    SIDHighWatermark	    "2791"
     Block {
       BlockType		      Constant
       Name		      "Constant1"
@@ -1195,7 +1200,7 @@ Model {
       System {
 	Name			"Controller"
 	Location		[-8, 0, 1928, 1056]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5059,7 +5064,7 @@ Model {
       Position		      [1270, 229, 1300, 261]
       ZOrder		      -30
       Floating		      off
-      Location		      [1934, 94, 3214, 1005]
+      Location		      [635, 94, 1915, 1005]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "yonly"
@@ -5540,7 +5545,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "StateIn"
 	  SID			  "2551"
-	  Position		  [25, 43, 55, 57]
+	  Position		  [40, 93, 70, 107]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
 	}
@@ -5548,7 +5553,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "TargetIn"
 	  SID			  "2552"
-	  Position		  [25, 113, 55, 127]
+	  Position		  [40, 178, 70, 192]
 	  ZOrder		  -2
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -5557,7 +5562,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "SolIn"
 	  SID			  "2553"
-	  Position		  [50, 178, 80, 192]
+	  Position		  [65, 243, 95, 257]
 	  ZOrder		  -3
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -5566,7 +5571,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "GoalIn"
 	  SID			  "2558"
-	  Position		  [90, 258, 120, 272]
+	  Position		  [105, 323, 135, 337]
 	  ZOrder		  -4
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -5575,7 +5580,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "vertsIn"
 	  SID			  "2590"
-	  Position		  [50, 298, 80, 312]
+	  Position		  [65, 363, 95, 377]
 	  ZOrder		  -5
 	  Port			  "5"
 	  IconDisplay		  "Port number"
@@ -5584,7 +5589,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "ObstIn"
 	  SID			  "2560"
-	  Position		  [135, 338, 165, 352]
+	  Position		  [150, 403, 180, 417]
 	  ZOrder		  -6
 	  Port			  "6"
 	  IconDisplay		  "Port number"
@@ -5594,7 +5599,7 @@ Model {
 	  Name			  "Compare\nTo Constant"
 	  SID			  "2680"
 	  Ports			  [1, 1]
-	  Position		  [480, 115, 510, 145]
+	  Position		  [750, 150, 780, 180]
 	  ZOrder		  2
 	  LibraryVersion	  "1.287"
 	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
@@ -5610,7 +5615,7 @@ Model {
 	  Name			  "Interpreted MATLAB\nFunction"
 	  SID			  "2541"
 	  Ports			  [1, 1]
-	  Position		  [365, 115, 435, 145]
+	  Position		  [635, 150, 705, 180]
 	  ZOrder		  -2
 	  MATLABFcn		  "visualizeSim"
 	}
@@ -5618,18 +5623,18 @@ Model {
 	  BlockType		  Mux
 	  Name			  "Mux2"
 	  SID			  "2540"
-	  Ports			  [6, 1]
-	  Position		  [270, 48, 280, 207]
+	  Ports			  [7, 1]
+	  Position		  [540, 87, 550, 293]
 	  ZOrder		  -16
 	  ShowName		  off
-	  Inputs		  "6"
+	  Inputs		  "7"
 	  DisplayOption		  "bar"
 	}
 	Block {
 	  BlockType		  RateTransition
 	  Name			  "Rate Transition1"
 	  SID			  "2559"
-	  Position		  [160, 244, 195, 286]
+	  Position		  [175, 309, 210, 351]
 	  ZOrder		  -10
 	  ShowName		  off
 	  Integrity		  off
@@ -5639,7 +5644,7 @@ Model {
 	  BlockType		  RateTransition
 	  Name			  "Rate Transition2"
 	  SID			  "2561"
-	  Position		  [205, 324, 240, 366]
+	  Position		  [220, 389, 255, 431]
 	  ZOrder		  -10
 	  ShowName		  off
 	  Integrity		  off
@@ -5649,7 +5654,7 @@ Model {
 	  BlockType		  RateTransition
 	  Name			  "Rate Transition3"
 	  SID			  "2546"
-	  Position		  [90, 99, 130, 141]
+	  Position		  [105, 164, 145, 206]
 	  ZOrder		  -10
 	  ShowName		  off
 	  Integrity		  off
@@ -5659,7 +5664,7 @@ Model {
 	  BlockType		  RateTransition
 	  Name			  "Rate Transition4"
 	  SID			  "2591"
-	  Position		  [120, 284, 155, 326]
+	  Position		  [135, 349, 170, 391]
 	  ZOrder		  -10
 	  ShowName		  off
 	  Integrity		  off
@@ -5669,7 +5674,7 @@ Model {
 	  BlockType		  RateTransition
 	  Name			  "Rate Transition6"
 	  SID			  "2544"
-	  Position		  [90, 29, 130, 71]
+	  Position		  [105, 79, 145, 121]
 	  ZOrder		  -10
 	  ShowName		  off
 	  Integrity		  off
@@ -5679,7 +5684,7 @@ Model {
 	  BlockType		  RateTransition
 	  Name			  "Rate Transition7"
 	  SID			  "2548"
-	  Position		  [120, 164, 155, 206]
+	  Position		  [135, 229, 170, 271]
 	  ZOrder		  -10
 	  ShowName		  off
 	  Integrity		  off
@@ -5689,8 +5694,15 @@ Model {
 	  BlockType		  Stop
 	  Name			  "Stop Simulation"
 	  SID			  "2679"
-	  Position		  [580, 112, 615, 148]
+	  Position		  [850, 147, 885, 183]
 	  ZOrder		  1
+	}
+	Block {
+	  BlockType		  Width
+	  Name			  "Width"
+	  SID			  "2791"
+	  Position		  [445, 145, 475, 175]
+	  ZOrder		  3
 	}
 	Line {
 	  ZOrder		  15
@@ -5703,6 +5715,7 @@ Model {
 	  ZOrder		  2
 	  SrcBlock		  "Mux2"
 	  SrcPort		  1
+	  Points		  [34, 0; 0, -25]
 	  DstBlock		  "Interpreted MATLAB\nFunction"
 	  DstPort		  1
 	}
@@ -5710,7 +5723,6 @@ Model {
 	  ZOrder		  3
 	  SrcBlock		  "Rate Transition6"
 	  SrcPort		  1
-	  Points		  [65, 0; 0, 15]
 	  DstBlock		  "Mux2"
 	  DstPort		  1
 	}
@@ -5718,7 +5730,7 @@ Model {
 	  ZOrder		  4
 	  SrcBlock		  "Rate Transition3"
 	  SrcPort		  1
-	  Points		  [0, -30]
+	  Points		  [0, -55]
 	  DstBlock		  "Mux2"
 	  DstPort		  2
 	}
@@ -5726,9 +5738,18 @@ Model {
 	  ZOrder		  5
 	  SrcBlock		  "Rate Transition7"
 	  SrcPort		  1
-	  Points		  [0, -70]
-	  DstBlock		  "Mux2"
-	  DstPort		  3
+	  Points		  [0, -90; 228, 0]
+	  Branch {
+	    ZOrder		    38
+	    Points		    [0, 42; 105, 0; 0, -12]
+	    DstBlock		    "Mux2"
+	    DstPort		    4
+	  }
+	  Branch {
+	    ZOrder		    37
+	    DstBlock		    "Width"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  ZOrder		  6
@@ -5766,20 +5787,20 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  11
+	  ZOrder		  32
 	  SrcBlock		  "Rate Transition1"
 	  SrcPort		  1
-	  Points		  [25, 0; 0, -125]
+	  Points		  [25, 0; 0, -110]
 	  DstBlock		  "Mux2"
-	  DstPort		  4
+	  DstPort		  5
 	}
 	Line {
-	  ZOrder		  12
+	  ZOrder		  30
 	  SrcBlock		  "Rate Transition2"
 	  SrcPort		  1
-	  Points		  [5, 0; 0, -155]
+	  Points		  [5, 0; 0, -130]
 	  DstBlock		  "Mux2"
-	  DstPort		  6
+	  DstPort		  7
 	}
 	Line {
 	  ZOrder		  13
@@ -5789,12 +5810,12 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  14
+	  ZOrder		  31
 	  SrcBlock		  "Rate Transition4"
 	  SrcPort		  1
-	  Points		  [80, 0; 0, -140]
+	  Points		  [80, 0; 0, -120]
 	  DstBlock		  "Mux2"
-	  DstPort		  5
+	  DstPort		  6
 	}
 	Line {
 	  ZOrder		  16
@@ -5802,6 +5823,13 @@ Model {
 	  SrcPort		  1
 	  DstBlock		  "Stop Simulation"
 	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  36
+	  SrcBlock		  "Width"
+	  SrcPort		  1
+	  DstBlock		  "Mux2"
+	  DstPort		  3
 	}
       }
     }
@@ -6176,6 +6204,7 @@ Model {
       FixedWidth	      off
       HorizontalAlignment     "left"
       VerticalAlignment	      "top"
+      ZOrder		      -1
     }
   }
 }

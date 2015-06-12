@@ -9,19 +9,22 @@ x = u(1:6);
 % current setpoint
 ys = u(7:8);
 
+% figure out solution size
+wid = u(9);
+
 % predictions
-sol = u(9:168);
+sol = u(9+(1:wid));
 px = sol(3:10:end);
 py = sol(7:10:end);
 
 %goal
-goal = u(169:170);
+goal = u(wid+(10:11));
 
 % vertices of current op region
-verts = u(171:174);
+verts = u(wid+(12:15));
 
 % obstacles
-obstIn = u(175:end);
+obstIn = u((wid+16):end);
 % number of obstacles
 nObst = floor(length(obstIn)/4);
 % reformat
