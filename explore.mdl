@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.580"
+    ComputedModelVersion    "1.581"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -84,9 +84,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "aeagr"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jun 12 13:33:42 2015"
-  RTWModifiedTimeStamp	  356016821
-  ModelVersionFormat	  "1.%<AutoIncrement:580>"
+  LastModifiedDate	  "Fri Jun 12 14:43:38 2015"
+  RTWModifiedTimeStamp	  356018486
+  ModelVersionFormat	  "1.%<AutoIncrement:581>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1676,7 +1676,7 @@ Model {
 		Type			"checkbox"
 		Name			"consAllBox"
 		Prompt			"Box constraints"
-		Value			"on"
+		Value			"off"
 	      }
 	      Object {
 		$ObjectID		47
