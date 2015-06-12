@@ -10,17 +10,18 @@ x = u(1:6);
 ys = u(7:8);
 
 % predictions
-px = u(9:24);
-py = u(25:40);
+sol = u(9:168);
+px = sol(3:10:end);
+py = sol(7:10:end);
 
 %goal
-goal = u(41:42);
+goal = u(169:170);
 
 % vertices of current op region
-verts = u(43:46);
+verts = u(171:174);
 
 % obstacles
-obstIn = u(47:end);
+obstIn = u(175:end);
 % number of obstacles
 nObst = floor(length(obstIn)/4);
 % reformat

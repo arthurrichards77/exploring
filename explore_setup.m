@@ -170,6 +170,10 @@ Fps = [1 0 0 0; % first line is  xmin-x<=0
        0 0 0 -1; % y-ymax<=0
        zeros(4,4)]*softWeight;
 
+% overwriter with constant box
+%fs([1:2,7:8])=1;
+%Fps = 0*Fps;
+   
 % terminal constraints Ff*x(N)<=Ff;
 Fxf = [-1  0  0  0; 
         1  0  0  0]; % constraint only on position
@@ -187,9 +191,9 @@ Fxf = 1e-6*eye(8); % effectively no constraint at all
 ff = ones(8,1);
 Fpf = zeros(8,4);
 
-% terminal equality constraints Ef*x(N)==ef
-Ef = eye(8)-A;
-Ef = Ef([1:2 5:6],:);
+% terminal equality constraints Exf*x(N)==ef
+Exf = eye(8)-A;
+Exf = Exf([1:2 5:6],:);
 %Ef = [0 1 0; 0 0 1];
 ef = [0;0;0;0];
 Ed = zeros(4,8); % no disturbance of eqs on disturbance
@@ -205,123 +209,6 @@ r = [0; 0];
 
 % horizon
 T = 16;
-
-%% build QP matrices
-
-% see help information in BUILDMATRICES for details of QP matrix format
-[H,g,gt,P,hx,hc,C,bx,bd,Ps,hxs,hcs,Ef_block,Ed_block,ef_block,hp,hps] = buildmatrices(A,B,Q,R,q,r,Qf,qf,T,Fx,Fu,f,Fxs,Fus,fs,Fxf,ff,Ef,ef,Ed,Fp,Fps,Fpf);
-
-% %% checking problem setup
-% 
-% % sizes
-% n = size(A,1);
-% m = size(B,2);
-% ell = size(Fx,1);
-% ellf = size(Ff,1);
-% ellef = size(Ef,1);
-% ells = size(Fxs,1);
-% 
-% % checks
-% if size(B,1)~=n,
-%     error('B must have same number of rows as A')
-% end
-% if size(A,2)~=n,
-%     error('A must be square')
-% end
-% if size(Q,2)~=n,
-%     error('Q must be the same size as A')
-% end
-% if size(Q,1)~=n,
-%     error('Q must be the same size as A')
-% end
-% if size(Fx,2)~=n,
-%     error('Fx must have same number of columns as A')
-% end
-% if size(Fu,1)~=ell,
-%     error('Fu must have same number of rows as Fx')
-% end
-% if size(Fu,2)~=m,
-%     error('Fu must have same number of columns as B')
-% end
-% if size(Fx,2)~=n,
-%     error('Fx must have same number of columns as A')
-% end
-% if size(Ff,2)~=n,
-%     error('Ff must have same number of columns as A')
-% end
-% if size(ff,1)~=ellf,
-%     error('ff must have same number of rows as Ff')
-% end
-% if size(Ef,2)~=n,
-%     error('Ef must have same number of columns as A')
-% end
-% if size(ef,1)~=ellef,
-%     error('ef must have same number of rows as Ef')
-% end
-% 
-% %% compile MPC problem
-% 
-% % min z'*H*z + (gt*xt+g)'*z + sum(max(0,Ps*z-hs))
-% % s.t. P*z <= h
-% %      C*z == b
-% %
-% % where h = hx*x0 + hc
-% %      hs = hxs*x0 + hcs + hcp*plim
-% % and b = bx*x0 + bd*d
-% %
-% % where plim is [xmin xmax ymin ymax]
-% 
-% H = blkdiag(R,kron(eye(T-1),blkdiag(Q,R)),Qf);
-% P = blkdiag(Fu,kron(eye(T-1),[Fx Fu]),Ff);
-% %C = kron(eye(T),[-B eye(n)]) + kron([zeros(1,T); eye(T-1) zeros(T-1,1)],[zeros(n,m) -A]);
-% C = [kron(eye(T),[-B eye(n)]) + kron([zeros(1,T); eye(T-1) zeros(T-1,1)],[zeros(n,m) -A]); zeros(ellef,m+(T-1)*(m+n)) Ef];
-% 
-% g = [r; repmat([q;r],T-1,1); qf];
-% hc = [repmat(f,T,1);ff];
-% hx = [-Fx; zeros((T-1)*ell + ellf,n)];
-% % bx = [A; zeros((T-1)*n,n)];
-% bx = [A; zeros(ellef+(T-1)*n,n)];
-% b = [zeros(T*n,1); ef];
-% 
-% Ps = blkdiag(Fus,kron(eye(T-1),[Fxs Fus]));
-% % check padding
-% Ps(1,T*(n+m))=0;
-% hcs = [repmat(fs,T,1)];
-% hxs = [-Fxs; zeros((T-1)*ells,n)];
-% 
-% % extra bit for offset free tracking
-% %bd = kron(ones(T,1),eye(n));
-% bd = [kron(ones(T,1),eye(n)); kron(eye(2),[1 0 0 0; 0 1 0 0])];
-% %bd = 0*bd;
-% gt = kron(ones(T,1),[zeros(m,n); -2*Q]);
-% 
-% % modify soft constraints for dynamic limits, for avoidance
-% hcp = zeros(length(hcs),4);
-% % max x limits
-% hcs(2:length(fs):end) = 0;
-% hcp(2:length(fs):end,2) = 100;
-% % min x limits
-% hcs(1:length(fs):end) = 0;
-% hcp(1:length(fs):end,1) = -100;
-% % max y limits
-% hcs(8:length(fs):end) = 0;
-% hcp(8:length(fs):end,4) = 100;
-% % min y limits
-% hcs(7:length(fs):end) = 0;
-% hcp(7:length(fs):end,3) = -100;
-
-%% goof - try sparse
-% seems to help quadprog anyway, provided interior point algorithm is used
-
-%H = sparse(H);
-%P = sparse(P);
-%C = sparse(C);
-
-%% MPC options
-opts(1)=0; % 1 = assume diagonal Phi when solving
-opts(2)=4; % Newton iterations
-opts(3)=1; % 1 = use soft constraints
-
 
 %% obstacle definitions
 
