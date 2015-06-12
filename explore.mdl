@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.591"
+    ComputedModelVersion    "1.593"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -67,11 +67,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"2681"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1886.0, 882.0]
 	ZoomFactor		[1.0]
-	Offset			[-9.0, 0.0]
+	Offset			[-7.25, 0.0]
       }
     }
   }
@@ -84,9 +84,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "aeagr"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jun 12 16:21:35 2015"
-  RTWModifiedTimeStamp	  356026894
-  ModelVersionFormat	  "1.%<AutoIncrement:591>"
+  LastModifiedDate	  "Fri Jun 12 17:14:55 2015"
+  RTWModifiedTimeStamp	  356027093
+  ModelVersionFormat	  "1.%<AutoIncrement:593>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -943,6 +943,12 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      ManualSwitch
+      CurrentSetting	      "1"
+      varsize		      off
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
@@ -1132,7 +1138,7 @@ Model {
   System {
     Name		    "explore"
     Location		    [-8, 0, 1928, 1056]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1145,7 +1151,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2791"
+    SIDHighWatermark	    "2792"
     Block {
       BlockType		      Constant
       Name		      "Constant1"
@@ -1200,7 +1206,7 @@ Model {
       System {
 	Name			"Controller"
 	Location		[-8, 0, 1928, 1056]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2251,6 +2257,14 @@ Model {
       Before		      "1"
       After		      "0"
       SampleTime	      "dt"
+    }
+    Block {
+      BlockType		      ManualSwitch
+      Name		      "Manual Switch"
+      SID		      "2792"
+      Position		      [480, 187, 510, 223]
+      ZOrder		      6
+      CurrentSetting	      "0"
     }
     Block {
       BlockType		      SubSystem
@@ -5945,8 +5959,18 @@ Model {
       ZOrder		      10
       SrcBlock		      "Constant1"
       SrcPort		      1
-      DstBlock		      "Visualizer"
-      DstPort		      4
+      Points		      [86, 0]
+      Branch {
+	ZOrder			117
+	Points			[0, -475]
+	DstBlock		"Manual Switch"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			116
+	DstBlock		"Visualizer"
+	DstPort			4
+      }
     }
     Line {
       ZOrder		      11
@@ -5989,9 +6013,9 @@ Model {
 	ZOrder			18
 	Points			[0, -105; 1, 0]
 	Branch {
-	  ZOrder		  58
-	  Points		  [0, -65]
-	  DstBlock		  "Controller"
+	  ZOrder		  114
+	  Points		  [0, -120]
+	  DstBlock		  "Manual Switch"
 	  DstPort		  2
 	}
 	Branch {
@@ -6194,6 +6218,14 @@ Model {
       SrcPort		      1
       DstBlock		      "Sum1"
       DstPort		      1
+    }
+    Line {
+      ZOrder		      115
+      SrcBlock		      "Manual Switch"
+      SrcPort		      1
+      Points		      [39, 0; 0, 65]
+      DstBlock		      "Controller"
+      DstPort		      2
     }
     Annotation {
       SID		      "2790"
@@ -6524,7 +6556,10 @@ Stateflow {
     firstTransition	    24
     firstJunction	    23
     viewObj		    16
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    9
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
