@@ -1,0 +1,3 @@
+[submodule "simulink_mpc"]
+	path = simulink_mpc
+	url = https://github.com/arthurrichards77/simulink_mpc.git
